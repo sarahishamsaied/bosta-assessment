@@ -60,7 +60,9 @@ const TrackShimpment = (props: Props) => {
             />
           </BottomLayoutTableItem>
           <DeliveryAddressContainer>
-            <Heading size="small">{t("DeliveryAddress")}</Heading>
+            <Heading size="small" bold={true} color="#2a324c">
+              {t("DeliveryAddress")}
+            </Heading>
             <Card color="#fbfbfb">
               <Text
                 properties={{
