@@ -1,0 +1,9 @@
+{
+  "TICKET_CREATED": "Ticket created",
+  "PACKAGE_RECEIVED": "Package received",
+  "IN_TRANSIT": "In transit",
+  "OUT_FOR_DELIVERY": "Out for delivery",
+  "WAITING_FOR_CUSTOMER_ACTION": "Waiting for customer action",
+  "NOT_YET_SHIPPED": "Not yet shipped",
+  "DELIVERED_TO_SENDER": "Delivered to sender"
+}

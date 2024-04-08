@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
+import { setLanguage } from "./localization/localization.slice";
+import { useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import TrackShimpment from "./screens/TrackShimpment/TrackShipment";
+import GlobalStyles from "./styles/GlobalStyles";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const language = useSelector(
+    (state: RootState) => state.localization.language
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles language={language} />
+      <Routes>
+        <Route path="/" element={<TrackShimpment />} />
+        <Route path="/track-shipment/:id" element={<TrackShimpment />} />
+      </Routes>
+    </>
   );
 }
 
