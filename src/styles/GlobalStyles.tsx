@@ -12,6 +12,10 @@ const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    @media screen and (max-width: 768px){
+        overflow-x: hidden;
+    }
   }
 `;
 
