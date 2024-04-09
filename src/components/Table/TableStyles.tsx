@@ -52,6 +52,10 @@ export const Reason = styled.div<{ state: string }>`
       return "#ffb028";
     }
   }};
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 `;
 
 export const TableWrapper = styled.table`
