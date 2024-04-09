@@ -23,6 +23,7 @@ export const Circle = styled.div<{
 
   @media screen and (max-width: 768px) {
     padding: 0.2rem;
+    font-size: 0.3rem;
   }
 `;
 

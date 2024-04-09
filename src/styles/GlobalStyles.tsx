@@ -11,12 +11,10 @@ const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
     font-family: "Cairo", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-
-    @media screen and (max-width: 768px){
-        overflow-x: hidden;
-    }
+    box-sizing: border-box;   
   }
+
+
 `;
 
 export default GlobalStyles;

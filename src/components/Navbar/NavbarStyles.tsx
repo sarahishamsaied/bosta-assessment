@@ -27,6 +27,10 @@ export const Nav = styled.nav<NavProps>`
 
 export const Logo = styled.img`
   width: 140px;
+
+  @media screen and (max-width: 768px) {
+    width: 100px;
+  }
 `;
 
 export const MobileIcon = styled.div`
@@ -34,7 +38,7 @@ export const MobileIcon = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1rem;
     cursor: pointer;
     margin: 0 auto;
   }

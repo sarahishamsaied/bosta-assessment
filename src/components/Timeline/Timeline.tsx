@@ -15,6 +15,7 @@ import {
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { Text } from "../../screens/TrackShimpment/TrackShipmentStyles";
 
 type Status = "completed" | "warning" | "error" | "upcoming";
 
@@ -42,10 +43,12 @@ export function Timeline({
   currentStep,
   numberOfSteps,
   overallStatus,
+  latestReason,
 }: {
   currentStep: number;
   numberOfSteps: number;
   overallStatus: "completed" | "upcoming" | "error" | "warning";
+  latestReason?: string;
 }) {
   const { t } = useTranslation();
   const { language } = useSelector((state: RootState) => state.localization);
@@ -150,6 +153,17 @@ export function Timeline({
             numberOfSteps={numberOfSteps}
           >
             {iconMapper[index].description}
+            <Text
+              properties={{
+                color: activeColor(overallStatus, currentStep, index),
+                fontWeight: "bold",
+                fontSize: 14,
+              }}
+            >
+              {index === currentStep &&
+                overallStatus !== "completed" &&
+                latestReason}
+            </Text>
           </Description>
         ))}
       </StepsContainer>

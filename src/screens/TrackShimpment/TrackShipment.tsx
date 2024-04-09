@@ -17,7 +17,10 @@ import Table from "../../components/Table/Table";
 import faq from "../../assets/faq.png";
 import Button from "../../components/Button/Button";
 import { Timeline } from "../../components/Timeline/Timeline";
-import { calculateCurrentStep } from "../../utils/calculateCurrentStep";
+import {
+  calculateCurrentStep,
+  getLatestReason,
+} from "../../utils/calculateCurrentStep";
 
 type Props = {};
 
@@ -41,6 +44,7 @@ const TrackShimpment = (props: Props) => {
         <ShipmentDetailsCard data={data} shipmentNumber={Number(id)} />
         <Card color="transparent">
           <Timeline
+            latestReason={getLatestReason(data?.TransitEvents ?? [])}
             overallStatus={
               statusMapper[data?.CurrentStatus.state ?? ""] ?? "warning"
             }

@@ -35,3 +35,14 @@ export const calculateCurrentStep = (
 
   return currentStep;
 };
+
+export const getLatestReason = (
+  transitEvents: ShipmentResponse["TransitEvents"]
+) => {
+  let latestReason = "";
+  transitEvents.forEach((event) => {
+    console.log("EVENT IS", event);
+    if (event.reason) return (latestReason = event.reason);
+  });
+  return latestReason;
+};

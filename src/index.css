@@ -17,6 +17,12 @@ body {
   z-index: -1 !important;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
