@@ -157,6 +157,7 @@ export function Timeline({
                 color: activeColor(overallStatus, currentStep, index),
                 fontWeight: "bold",
                 fontSize: 14,
+                onSmallScreen: { fontSize: 8 },
               }}
             >
               {index === currentStep &&

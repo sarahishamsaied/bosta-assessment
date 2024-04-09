@@ -144,6 +144,7 @@ export const Text = styled.p<{
     color: string;
     fontWeight: "bold" | "semi-bold" | "light" | "normal";
     fontSize: number;
+    onSmallScreen?: { fontSize: number };
   };
 }>`
   color: ${(props) => props.properties.color};
@@ -162,5 +163,13 @@ export const Text = styled.p<{
 
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
+
+    ${(props) => {
+      if (props.properties.onSmallScreen) {
+        return `
+          font-size: ${props.properties.onSmallScreen.fontSize}px;
+        `;
+      }
+    }}
   }
 `;
