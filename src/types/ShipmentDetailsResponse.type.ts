@@ -22,3 +22,6 @@ export interface ShipmentResponse {
     dayName: string;
   }>;
 }
+
+export type Status = "completed" | "warning" | "error" | "upcoming";
+export type Language = "en" | "ar";

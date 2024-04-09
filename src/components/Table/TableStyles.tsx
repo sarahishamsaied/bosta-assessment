@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Status } from "../../types/ShipmentDetailsResponse.type";
 
 export const Thead = styled.thead`
   background: #fafafa;
@@ -36,6 +37,21 @@ export const Td = styled.td`
     padding: 0.5rem 0.5rem;
     font-size: 0.7rem;
   }
+`;
+
+export const Reason = styled.div<{ state: string }>`
+  font-size: 0.8rem;
+  width: 100%;
+  font-weight: bold;
+  color: ${(props) => {
+    if (props.state === "CANCELLED") {
+      return "#e30613";
+    } else if (props.state === "DELIVERED") {
+      return "#00a651";
+    } else {
+      return "#ffb028";
+    }
+  }};
 `;
 
 export const TableWrapper = styled.table`

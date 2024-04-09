@@ -1,9 +1,10 @@
 import React from "react";
 import { ShipmentResponse } from "../../types/ShipmentDetailsResponse.type";
 import { useTranslation } from "react-i18next";
-import { Thead, Th, Tr, TableWrapper, Td } from "./TableStyles";
+import { Thead, Th, Tr, TableWrapper, Td, Reason } from "./TableStyles";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { Status } from "../../types/ShipmentDetailsResponse.type";
 
 type Props = {
   data: ShipmentResponse["TransitEvents"];
@@ -52,7 +53,12 @@ const Table = ({ data, headers }: Props) => {
               <Td>{t("MadinatNasr")}</Td>
               <Td>{getDate(row.timestamp)}</Td>
               <Td>{getTime(row.timestamp)}</Td>
-              <Td>{t(row.state)}</Td>
+              <Td>
+                {t(row.state)}
+                {row.reason && (
+                  <Reason state={row.state}>{t(row.reason ?? "")}</Reason>
+                )}
+              </Td>
             </tr>
           ))}
         </tbody>

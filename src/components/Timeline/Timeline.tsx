@@ -16,8 +16,7 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { Text } from "../../screens/TrackShimpment/TrackShipmentStyles";
-
-type Status = "completed" | "warning" | "error" | "upcoming";
+import { Status } from "../../types/ShipmentDetailsResponse.type";
 
 const activeColor = (
   overallStatus: Status,
